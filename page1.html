@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaînes TV Sport en Direct</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .channels-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .channel-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .channel-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .channel-logo {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .channel-name {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .channel-info {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .program {
+            margin: 10px 0;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+        }
+
+        .live-badge {
+            background: #ff4757;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .quality-badge {
+            background: #2ed573;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7em;
+            margin-left: 5px;
+        }
+
+        .language {
+            font-size: 0.8em;
+            color: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .channels-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="channels-container">
+        <!-- BeIN Sports -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">BS1</div>
+                <div class="channel-name">BeIN Sports 1</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Liga : Real Madrid vs Barcelona</div>
+                <div class="language">Français • Arabe</div>
+            </div>
+        </div>
+
+        <!-- Canal+ Sport -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">C+</div>
+                <div class="channel-name">Canal+ Sport</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">4K</span>
+                <div class="program">Ligue 1 : PSG vs Marseille</div>
+                <div class="language">Français</div>
+            </div>
+        </div>
+
+        <!-- RMC Sport 1 -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">RMC</div>
+                <div class="channel-name">RMC Sport 1</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Champions League : City vs Bayern</div>
+                <div class="language">Français</div>
+            </div>
+        </div>
+
+        <!-- Eurosport 1 -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">EU1</div>
+                <div class="channel-name">Eurosport 1</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Tennis : Roland Garros</div>
+                <div class="language">Français • Anglais</div>
+            </div>
+        </div>
+
+        <!-- ESPN -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">ESPN</div>
+                <div class="channel-name">ESPN</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">NBA : Lakers vs Warriors</div>
+                <div class="language">Anglais</div>
+            </div>
+        </div>
+
+        <!-- Sky Sports -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">SKY</div>
+                <div class="channel-name">Sky Sports</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">4K</span>
+                <div class="program">Premier League : Liverpool vs Chelsea</div>
+                <div class="language">Anglais</div>
+            </div>
+        </div>
+
+        <!-- Fox Sports -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">FOX</div>
+                <div class="channel-name">Fox Sports</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">NFL : Cowboys vs Eagles</div>
+                <div class="language">Anglais</div>
+            </div>
+        </div>
+
+        <!-- DAZN -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">DZN</div>
+                <div class="channel-name">DAZN</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Boxe : Joshua vs Fury</div>
+                <div class="language">Multi-langues</div>
+            </div>
+        </div>
+
+        <!-- L'Équipe TV -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">EQP</div>
+                <div class="channel-name">L'Équipe TV</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Cyclisme : Tour de France</div>
+                <div class="language">Français</div>
+            </div>
+        </div>
+
+        <!-- Sport Italia -->
+        <div class="channel-card">
+            <div class="channel-header">
+                <div class="channel-logo">SI</div>
+                <div class="channel-name">Sport Italia</div>
+            </div>
+            <div class="channel-info">
+                <span class="live-badge">EN DIRECT</span>
+                <span class="quality-badge">HD</span>
+                <div class="program">Serie A : Inter vs Milan</div>
+                <div class="language">Italien</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
